@@ -1,5 +1,5 @@
 {
-  "name": "sedona-frontend",
+  "name": "sedona-basis",
   "version": "3.1.0",
   "dependencies": {
     "normalize.css": "^8.0.0"
