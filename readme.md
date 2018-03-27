@@ -34,3 +34,21 @@ src/             # Исходные файлы
     variables.less   # Файл с переменными
   index.html       # Индексный файл
 ```
+
+## Рекомендуемый лейаут
+
+```html
+<div class="page">
+	<header class="header">
+		
+	</header>
+
+	<main class="main">
+		
+	</main>
+
+	<footer class="footer">
+		
+	</footer>
+</div>
+```
