@@ -39,16 +39,16 @@ src/             # Исходные файлы
 
 ```html
 <div class="page">
-	<header class="header">
-		
-	</header>
+  <header class="header">
+    
+  </header>
 
-	<main class="main">
-		
-	</main>
+  <main class="main">
+    
+  </main>
 
-	<footer class="footer">
-		
-	</footer>
+  <footer class="footer">
+    
+  </footer>
 </div>
 ```
