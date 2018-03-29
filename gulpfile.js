@@ -91,7 +91,10 @@ gulp.task('html', function() {
 			locale: ['ru', 'en-US'],
 			htmlEntity: {
 				type: 'name'
-			}
+			},
+			enableRule: ['common/nbsp/afterNumber'],
+			disableRule: ['common/space/replaceTab'],
+			processingSeparateParts: false
 		}),
 		gulp.dest(paths.dist.base),
 		browserSync.stream()
