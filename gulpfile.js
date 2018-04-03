@@ -23,6 +23,7 @@ const typograf = require('gulp-typograf');
 //------------------------------------------------------------------------------
 
 const paths = {
+	build: 'build/',
 	dist: {
 		base: 'dist/',
 		img: 'dist/img/',
@@ -155,6 +156,17 @@ gulp.task('js:app', function() {
 });
 
 
+// Build
+//------------------------------------------------------------------------------
+
+gulp.task('build', ['clean:build', 'default'], function() {
+	return multipipe(
+		gulp.src(paths.dist.base + '**'),
+		gulp.dest(paths.build)
+	);
+});
+
+
 // Watch
 //------------------------------------------------------------------------------
 
@@ -177,6 +189,10 @@ gulp.task('watch', ['default'], function() {
 
 gulp.task('clean:dist', function() {
 	return del.sync(['dist/**', '!dist']);
+});
+
+gulp.task('clean:build', function() {
+	return del.sync(['build/**', '!build']);
 });
 
 
