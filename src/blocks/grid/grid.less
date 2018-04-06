@@ -2,13 +2,21 @@
 //------------------------------------------------------------------------------
 
 .grid {
-	width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-	max-width: @grid-breakpoints-xl;
-	margin-bottom: -@indent;
 	display: flex;
-	flex-wrap: wrap;
+    width: 100%;
+    max-width: @grid-breakpoints-xl;
+    margin-right: auto;
+    margin-bottom: (@indent-element-smaller - @indent);
+    margin-left: auto;
+    flex-wrap: wrap;
+
+	@media (min-width: @grid-breakpoints-md) {
+		margin-bottom: (@indent-element-larger - @indent);
+	}
+
+	&:last-of-type {
+		margin-bottom: -@indent;
+	}
 
 	&--jc-fs {
 		justify-content: flex-start;
@@ -55,27 +63,15 @@
 	}
 
 	&--diff {
-		margin-bottom: -@indent-element-smaller;
-
-		@media (min-width: @grid-breakpoints-md) {
-			margin-bottom: -@indent-element-larger;
-		}
-	}
-
-	& ~ & {
-		margin-top: @indent-element-smaller;
-
-		@media (min-width: @grid-breakpoints-md) {
-			margin-top: @indent-element-larger;
-		}
+		margin-bottom: 0;
 	}
 }
 
 .grid__col {
 	width: 100%;
+	margin-bottom: @indent;
 	padding-left: (@grid-gutter / 2);
 	padding-right: (@grid-gutter / 2);
-	margin-bottom: @indent;
 
 	.grid--diff & {
 		margin-bottom: @indent-element-smaller;
