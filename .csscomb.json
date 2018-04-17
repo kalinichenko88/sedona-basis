@@ -84,6 +84,7 @@
       "text-align",
       "direction",
       "color",
+      "fill",
       "text-transform",
       "text-decoration",
       "font-style",
