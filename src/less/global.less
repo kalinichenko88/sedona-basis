@@ -86,6 +86,8 @@ a,
 	fill: @link-primary;
 	text-decoration: none;
 	border-bottom: 1px solid fade(@link-primary, 30%);
+	transition-property: color, fill, border-bottom-color;
+	transition: @duration @timing-function;
 
 	&:hover {
 		color: darken(@link-primary, 15%);
@@ -132,6 +134,8 @@ a {
 	vertical-align: middle;
 	border-radius: @radius;
 	position: relative;
+	transition-property: background-color, border-color;
+	transition: @duration @timing-function;
 
 	&:hover {
 		background-color: darken(@button-primary, 10%);
