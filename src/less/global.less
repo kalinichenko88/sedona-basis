@@ -2,11 +2,11 @@
 //------------------------------------------------------------------------------
 
 html {
-	cursor: default;
+	box-sizing: border-box;
 	overflow-y: scroll;
+	cursor: default;
 	-webkit-font-smoothing: antialiased;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	box-sizing: border-box;
 }
 
 *,
@@ -16,14 +16,14 @@ html {
 }
 
 body {
+	min-width: 320px;
 	font-size: @font-size;
 	line-height: @line-height;
 	font-family: @font-family-primary;
 	font-display: swap;
 	color: @dark-primary;
 	fill: @dark-primary;
-	background-color: #fff;
-	min-width: 320px;
+	background-color: #ffffff;
 }
 
 
@@ -32,12 +32,12 @@ body {
 
 h1,
 .h1 {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: bold;
 	font-size: @font-size-h1;
 	line-height: @line-height-h1;
 	font-family: @font-family-secondary;
-	font-weight: bold;
-	margin-top: 0;
-	margin-bottom: 0;
 
 	@media (min-width: @grid-breakpoints-md) {
 		font-size: @font-size-h1-larger;
@@ -47,12 +47,12 @@ h1,
 
 h2,
 .h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: bold;
 	font-size: @font-size-h2;
 	line-height: @line-height-h2;
 	font-family: @font-family-secondary;
-	font-weight: bold;
-	margin-top: 0;
-	margin-bottom: 0;
 
 	@media (min-width: @grid-breakpoints-md) {
 		font-size: @font-size-h2-larger;
@@ -62,12 +62,12 @@ h2,
 
 h3,
 .h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: bold;
 	font-size: @font-size-h3;
 	line-height: @line-height-h3;
 	font-family: @font-family-secondary;
-	font-weight: bold;
-	margin-top: 0;
-	margin-bottom: 0;
 
 	@media (min-width: @grid-breakpoints-md) {
 		font-size: @font-size-h3-larger;
@@ -81,13 +81,13 @@ h3,
 
 a,
 .link {
-	cursor: pointer;
 	color: @link-primary;
 	fill: @link-primary;
 	text-decoration: none;
 	border-bottom: 1px solid fade(@link-primary, 30%);
-	transition-property: color, fill, border-bottom-color;
+	cursor: pointer;
 	transition: @duration @timing-function;
+	transition-property: color, fill, border-bottom-color;
 
 	&:hover {
 		color: darken(@link-primary, 15%);
@@ -99,10 +99,10 @@ a,
 a {
 	&:not([href]),
 	&[href^="tel"] {
-		cursor: inherit;
 		color: inherit !important;
 		fill: inherit !important;
 		border-bottom: 0;
+		cursor: inherit;
 	}
 
 	&[href^="tel"] {
@@ -121,21 +121,21 @@ a {
 //------------------------------------------------------------------------------
 
 .btn {
+	position: relative;
 	display: inline-block;
-	border: 1px solid fade(@button-primary, 0) !important;
-	background-color: @button-primary;
+	min-width: 100px;
+	padding: (6px - 1px) (@indent - 1px);
+	vertical-align: middle;
+	text-align: center;
 	color: @light-primary !important;
 	fill: @light-primary !important;
-	padding: (6px - 1px) (@indent - 1px);
-	cursor: pointer;
-	min-width: 100px;
 	white-space: nowrap;
-	text-align: center;
-	vertical-align: middle;
+	background-color: @button-primary;
+	border: 1px solid fade(@button-primary, 0) !important;
 	border-radius: @radius;
-	position: relative;
-	transition-property: background-color, border-color;
+	cursor: pointer;
 	transition: @duration @timing-function;
+	transition-property: background-color, border-color;
 
 	&:hover {
 		background-color: darken(@button-primary, 10%);
@@ -150,26 +150,26 @@ a {
 	}
 
 	&--dark-contour {
-		border-color: fade(@dark-primary, 30%) !important;
 		color: @dark-primary !important;
 		fill: @dark-primary !important;
 		background-color: transparent;
+		border-color: fade(@dark-primary, 30%) !important;
 
 		&:hover {
-			border-color: fade(@dark-primary, 50%) !important;
 			background-color: transparent;
+			border-color: fade(@dark-primary, 50%) !important;
 		}
 	}
 
 	&--light-contour {
-		border-color: fade(@light-primary, 30%) !important;
 		color: @light-primary !important;
 		fill: @light-primary !important;
 		background-color: transparent;
+		border-color: fade(@light-primary, 30%) !important;
 
 		&:hover {
-			border-color: fade(@light-primary, 50%) !important;
 			background-color: transparent;
+			border-color: fade(@light-primary, 50%) !important;
 		}
 	}
 }
