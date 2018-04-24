@@ -42,20 +42,20 @@
 
 .header__wrap {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	width: 100%;
 	max-width: @grid-breakpoints-xl;
 	min-height: (@line-height + @indent * 2);
-	margin: auto;
+	margin-right: auto;
+	margin-left: auto;
 
 	@media (min-width: @grid-breakpoints-md) {
-		flex-wrap: nowrap;
+		flex-direction: row;
 	}
 }
 
 .header__fold {
 	display: flex;
-	width: 100%;
 	min-height: (@line-height + @indent * 2);
 
 	@media (min-width: @grid-breakpoints-sm) {
@@ -64,8 +64,7 @@
 	}
 
 	@media (min-width: @grid-breakpoints-md) {
-		width: auto;
-		height: auto;
+		min-height: auto;
 		padding-right: 0;
 		padding-left: 0;
 	}
@@ -158,7 +157,6 @@
 
 .header__collapse {
 	display: none;
-	width: 100%;
 	padding-top: @indent;
 	padding-bottom: @indent;
 
@@ -169,7 +167,6 @@
 
 	@media (min-width: @grid-breakpoints-md) {
 		display: flex !important;
-		width: auto;
 		margin-left: auto;
 		padding: 0;
 	}
@@ -178,7 +175,7 @@
 		display: block;
 	}
 
-	> *:not(:first-child) {
+	 > *:not(:first-child) {
 		margin-top: @indent;
 
 		@media (min-width: @grid-breakpoints-md) {
