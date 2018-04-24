@@ -1,0 +1,61 @@
+// Footer
+//------------------------------------------------------------------------------
+
+.footer {
+	padding-bottom: @indent-block-smaller;
+
+	@media (min-width: @grid-breakpoints-sm) {
+		padding-right: (@grid-gutter / 2);
+		padding-left: (@grid-gutter / 2);
+	}
+
+	@media (min-width: @grid-breakpoints-md) {
+		padding-bottom: @indent-block-larger;
+	}
+}
+
+.footer__wrap {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: @grid-breakpoints-xl;
+	margin-right: auto;
+	margin-bottom: -@indent-element-smaller;
+	margin-left: auto;
+
+	@media (min-width: @grid-breakpoints-md) {
+		flex-direction: row;
+		justify-content: space-between;
+		margin-bottom: -@indent-element-larger;
+	}
+}
+
+.footer__copyright {
+	margin-bottom: @indent-element-smaller;
+	padding-right: (@grid-gutter / 2);
+	padding-left: (@grid-gutter / 2);
+
+	@media (min-width: @grid-breakpoints-md) {
+		margin-bottom: @indent-element-larger;
+	}
+}
+
+.footer__developer {
+	margin-bottom: @indent-element-smaller;
+	padding-right: (@grid-gutter / 2);
+	padding-left: (@grid-gutter / 2);
+
+	@media (min-width: @grid-breakpoints-md) {
+		margin-bottom: @indent-element-larger;
+	}
+}
+
+.footer__extra {
+	margin-bottom: @indent-element-smaller;
+	padding-right: (@grid-gutter / 2);
+	padding-left: (@grid-gutter / 2);
+
+	@media (min-width: @grid-breakpoints-md) {
+		margin-bottom: @indent-element-larger;
+	}
+}
