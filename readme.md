@@ -59,8 +59,3 @@ src/                # Исходные файлы
   </footer>
 </div>
 ```
-
-## Настройка
-
-* Базовые цвета: https://codepen.io/maxsof/pen/vjKPBx/
-
