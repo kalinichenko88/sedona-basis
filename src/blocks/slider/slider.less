@@ -1,0 +1,67 @@
+// Slider
+//------------------------------------------------------------------------------
+
+.slider__wrap {
+	width: 100%;
+	max-width: @grid-breakpoints-xl;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.slider__content {
+	padding-right: (@grid-gutter / 2);
+	padding-left: (@grid-gutter / 2);
+}
+
+.slider__pagination {
+	position: relative;
+	margin-top: @indent;
+	margin-right: auto;
+	margin-left: auto;
+
+	&--bullets {
+		display: flex;
+		overflow: hidden;
+	}
+}
+
+.slider__bullet {
+	position: relative;
+	display: block;
+	flex-shrink: 0;
+	width: 9px;
+	height: 9px;
+	margin-right: @rhythm;
+	margin-left: @rhythm;
+	background-color: @dark-primary;
+	border-radius: 50%;
+	transform: scale3d(0, 0, 1);
+	opacity: 0;
+	transition: @duration @timing-function;
+	transition-property: left, transform, opacity;
+
+	&--active-main {
+		transform: scale3d(1, 1, 1);
+		opacity: 0.5;
+	}
+
+	&--active-prev,
+	&--active-next {
+		transform: scale3d(0.6666, 0.6666, 1);
+		opacity: 0.4;
+	}
+
+	&--active-prev-prev,
+	&--active-next-next {
+		transform: scale3d(0.3333, 0.3333, 1);
+		opacity: 0.3;
+	}
+
+	&:hover {
+		opacity: 0.75;
+	}
+
+	&--active {
+		opacity: 1 !important;
+	}
+}
