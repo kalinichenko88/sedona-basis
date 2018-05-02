@@ -79,20 +79,28 @@ h3,
 // Links
 //------------------------------------------------------------------------------
 
+.link(@color) {
+	color: @color;
+	fill: @color;
+	border-bottom: 1px solid fade(@color, 30%);
+}
+
+.link-hover(@color) {
+	color: darken(@color, 15%);
+	fill: darken(@color, 15%);
+	border-bottom-color: fade(darken(@color, 15%), 30%);
+}
+
 a,
 .link {
-	color: @link-primary;
-	fill: @link-primary;
+	.link(@link-primary);
 	text-decoration: none;
-	border-bottom: 1px solid fade(@link-primary, 30%);
 	cursor: pointer;
 	transition: @duration @timing-function;
 	transition-property: color, fill, border-bottom-color;
 
 	&:hover {
-		color: darken(@link-primary, 15%);
-		fill: darken(@link-primary, 15%);
-		border-bottom-color: fade(darken(@link-primary, 15%), 30%);
+		.link-hover(@link-primary);
 	}
 }
 
