@@ -60,6 +60,7 @@ const paths = {
 	},
 	watch: {
 		html: [
+			'src/blocks/**/*.html',
 			'src/inc/*.html',
 			'src/*.html'
 		],
