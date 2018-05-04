@@ -133,6 +133,7 @@ a {
 	display: inline-block;
 	min-width: 100px;
 	padding: (6px - 1px) (@indent - 1px);
+	line-height: @line-height;
 	vertical-align: middle;
 	text-align: center;
 	color: @light-primary !important;
@@ -155,6 +156,10 @@ a {
 
 	&--rounded {
 		border-radius: (@line-height / 2 + 6px);
+	}
+
+	&--squared {
+		border-radius: @radius;
 	}
 
 	&--dark-contour {
