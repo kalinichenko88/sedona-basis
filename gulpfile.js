@@ -17,6 +17,7 @@ const multipipe = require('multipipe');
 const browserSync = require('browser-sync').create();
 const gulpsync = require('gulp-sync')(gulp);
 const typograf = require('gulp-typograf');
+const gulpHtmlVersion = require('gulp-html-version');
 
 
 // Paths
@@ -46,9 +47,9 @@ const paths = {
 				'node_modules/swiper/dist/css/swiper.min.css'
 			],
 			main: [
+				'node_modules/sedona-blocks/grid/grid.less',
 				'node_modules/sedona-blocks/scene/scene.less',
 				'node_modules/sedona-blocks/wysiwyg/wysiwyg.less',
-  				'node_modules/sedona-blocks/grid/grid.less',
 				'src/less/main.less'
 			]
 		},
@@ -93,6 +94,10 @@ gulp.task('html', function() {
 	return multipipe(
 		gulp.src(paths.src.html),
 		fileinclude(),
+		gulpHtmlVersion({
+			paramType: 'timestamp',
+			suffix: ['css', 'js', 'jpg', 'png', 'svg']
+		}),
 		typograf({
 			locale: ['ru', 'en-US'],
 			htmlEntity: {
