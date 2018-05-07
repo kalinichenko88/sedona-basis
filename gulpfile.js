@@ -17,6 +17,7 @@ const multipipe = require('multipipe');
 const browserSync = require('browser-sync').create();
 const gulpsync = require('gulp-sync')(gulp);
 const typograf = require('gulp-typograf');
+const gulpHtmlVersion = require('gulp-html-version');
 
 
 // Paths
@@ -90,6 +91,10 @@ gulp.task('html', function() {
 	return multipipe(
 		gulp.src(paths.src.html),
 		fileinclude(),
+		gulpHtmlVersion({
+			paramType: 'timestamp',
+			suffix: ['css', 'js', 'jpg', 'png', 'svg']
+		}),
 		typograf({
 			locale: ['ru', 'en-US'],
 			htmlEntity: {
