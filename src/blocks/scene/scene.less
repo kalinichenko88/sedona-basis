@@ -1,11 +1,17 @@
 // Scene
 //------------------------------------------------------------------------------
 
-@scene-lighten-color: @dark-primary;
-@scene-lighten-background: @light-primary;
+// Darken
 
 @scene-darken-color: @light-primary;
 @scene-darken-background: @dark-primary;
+@scene-darken-link-color: @link-primary;
+
+// Lighten
+
+@scene-lighten-color: @dark-primary;
+@scene-lighten-background: @light-primary;
+@scene-lighten-link-color: @link-primary;
 
 
 // Style
@@ -23,16 +29,32 @@
 		padding-bottom: @indent-block-larger;
 	}
 
-	&--lighten {
-		color: @scene-lighten-color;
-		fill: @scene-lighten-color;
-		background: @scene-lighten-background;
-	}
-
 	&--darken {
 		color: @scene-darken-color;
 		fill: @scene-darken-color;
 		background: @scene-darken-background;
+
+		a {
+			.link(@scene-darken-link-color);
+
+			&:hover {
+				.link-hover(@scene-darken-link-color);
+			}
+		}
+	}
+
+	&--lighten {
+		color: @scene-lighten-color;
+		fill: @scene-lighten-color;
+		background: @scene-lighten-background;
+
+		a {
+			.link(@scene-lighten-link-color);
+
+			&:hover {
+				.link-hover(@scene-lighten-link-color);
+			}
+		}
 	}
 
 	&--fill {
