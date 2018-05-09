@@ -6,6 +6,8 @@
 @table-head-font: normal @font-size-smaller/@line-height-smaller @font-family-primary;
 @table-head-color: @base-secondary;
 
+@table-tr-hover-background-color: @table-divider;
+
 
 // Style
 //------------------------------------------------------------------------------
@@ -15,6 +17,19 @@
 	display: inline-block;
 	max-width: 100%;
 	vertical-align: top;
+	margin-bottom: @indent;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	& + & {
+		margin-top: @indent-element-smaller;
+
+		@media (min-width: @grid-breakpoints-md) {
+			margin-top: @indent-element-larger;
+		}
+	}
 
 	&::before,
 	&::after {
@@ -90,6 +105,16 @@
 		vertical-align: bottom;
 		color: @table-head-color;
 		fill: @table-head-color;
+	}
+
+	tbody tr {
+		background-color: fade(@table-tr-hover-background-color, 0);
+		transition-property: background-color;
+		transition: @duration @timing-function;
+
+		&:hover {
+			background-color: fade(@table-tr-hover-background-color, 100%);
+		}
 	}
 }
 
