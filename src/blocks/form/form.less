@@ -3,18 +3,14 @@
 
 @form-control-border-width: 1px;
 @form-control-border-color: @base-divider;
-@form-control-radius: @radius;
-
+@form-control-border-radius: @radius;
 @form-control-padding-top: 6px;
 @form-control-padding-bottom: @form-control-padding-top;
 @form-control-padding-left: @indent;
 @form-control-padding-right: @form-control-padding-left;
-
 @form-control-color: @base-primary;
 @form-control-background-color: transparent;
-
 @form-hint-color: @base-hint;
-
 @form-breakpoints-desktop: @grid-breakpoints-md;
 
 
@@ -136,7 +132,7 @@
 		padding-right: (@form-control-padding-right - @form-control-border-width);
 		padding-bottom: (@form-control-padding-bottom - @form-control-border-width);
 		padding-left: (@form-control-padding-left - @form-control-border-width);
-		border-radius: @form-control-radius;
+		border-radius: @form-control-border-radius;
 		width: 100%;
 		min-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
 		appearance: none;
@@ -181,7 +177,7 @@
 		padding-right: (@form-control-padding-right * 2 + 8px - @form-control-border-width);
 		padding-bottom: (@form-control-padding-bottom - @form-control-border-width);
 		padding-left: (@form-control-padding-left - @form-control-border-width);
-		border-radius: @form-control-radius;
+		border-radius: @form-control-border-radius;
 		color: @form-control-color;
 		width: 100%;
 		min-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
@@ -232,7 +228,7 @@
 		padding-right: (@form-control-padding-right - @form-control-border-width);
 		padding-bottom: (@form-control-padding-bottom - @form-control-border-width);
 		padding-left: (@form-control-padding-left - @form-control-border-width);
-		border-radius: @form-control-radius;
+		border-radius: @form-control-border-radius;
 		width: 100%;
 		transition-property: box-shadow, border-color;
 		transition: @duration @timing-function;
