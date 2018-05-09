@@ -5,20 +5,17 @@
 
 @card-border-width: 1px;
 @card-border-radius: @radius;
-@card-link-color: @link-primary;
 
 // Darken
 
 @card-darken-color: @light-primary;
 @card-darken-background: @dark-primary;
-@card-darken-link-color: @card-link-color;
 @card-darken-border-color: @light-divider;
 
 // Lighten
 
 @card-lighten-color: @dark-primary;
 @card-lighten-background: @light-primary;
-@card-lighten-link-color: @card-link-color;
 @card-lighten-border-color: @dark-divider;
 
 
@@ -28,7 +25,6 @@
 .card {
 	min-height: 100%;
 	margin-bottom: @indent;
-	border-radius: @card-border-radius;
 	overflow: hidden;
 	position: relative;
 
@@ -36,18 +32,11 @@
 		margin-bottom: 0;
 	}
 
-	a {
-		.link(@card-link-color);
-
-		&:hover {
-			.link-hover(@card-link-color);
-		}
-	}
-
 	&--dark-contour,
 	&--light-contour,
 	&--darken,
 	&--lighten {
+		border-radius: @card-border-radius;
 		padding-top: @indent;
 		padding-bottom: @indent;
 		margin-right: (@grid-gutter / 2);
@@ -66,38 +55,13 @@
 		color: @card-darken-color;
 		fill: @card-darken-color;
 		background: @card-darken-background;
-
-		a {
-			.link(@card-darken-link-color);
-
-			&:hover {
-				.link-hover(@card-darken-link-color);
-			}
-		}
 	}
 
 	&--lighten {
 		color: @card-lighten-color;
 		fill: @card-lighten-color;
 		background: @card-lighten-background;
-
-		a {
-			.link(@card-lighten-link-color);
-
-			&:hover {
-				.link-hover(@card-lighten-link-color);
-			}
-		}
 	}
-}
-
-.card__wrap {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	max-width: @grid-breakpoints-xl;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .card__frame {
