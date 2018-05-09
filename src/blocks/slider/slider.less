@@ -1,22 +1,26 @@
 // Slider
 //------------------------------------------------------------------------------
 
+// Base
+
 @slider-item-background-color: transparent;
 @slider-item-background-repeat: no-repeat;
 @slider-item-background-position: 50%;
 @slider-item-background-size: cover;
+@slider-max-width: @grid-breakpoints-xl;
+@slider-bullet-width: 7px;
+@slider-bullet-height: 7px;
+@slider-bullet-radius: 50%;
 
-@slider-item-lighten-color: @dark-primary;
-@slider-item-lighten-background-color: @light-primary;
+// Darken
 
 @slider-item-darken-color: @light-primary;
 @slider-item-darken-background-color: @dark-primary;
 
-@slider-max-width: @grid-breakpoints-xl;
+// Lighten
 
-@slider-bullet-width: 7px;
-@slider-bullet-height: 7px;
-@slider-bullet-radius: 50%;
+@slider-item-lighten-color: @dark-primary;
+@slider-item-lighten-background-color: @light-primary;
 
 
 // Style
@@ -39,16 +43,16 @@
 	background-position: @slider-item-background-position;
 	background-size: @slider-item-background-size;
 
-	&--lighten {
-		color: @slider-item-lighten-color;
-		fill: @slider-item-lighten-color;
-		background-color: @slider-item-lighten-background-color;
-	}
-
 	&--darken {
 		color: @slider-item-darken-color;
 		fill: @slider-item-darken-color;
 		background-color: @slider-item-darken-background-color;
+	}
+
+	&--lighten {
+		color: @slider-item-lighten-color;
+		fill: @slider-item-lighten-color;
+		background-color: @slider-item-lighten-background-color;
 	}
 
 	.slider--scene & {
