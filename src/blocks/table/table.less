@@ -1,24 +1,24 @@
 // Table
 //------------------------------------------------------------------------------
 
-@table-divider: @base-divider;
-
-@table-lighten-divider: @dark-divider;
-
-@table-darken-divider: @light-divider;
+// Base
 
 @table-head-font: normal @font-size-smaller/@line-height-smaller @font-family-primary;
 @table-head-color: @base-secondary;
-
-@table-lighten-head-color: @dark-secondary;
-
-@table-darken-head-color: @light-secondary;
-
+@table-divider: @base-divider;
 @table-tr-hover-background-color: @table-divider;
 
-@table-lighten-tr-hover-background-color: @table-lighten-divider;
+// Darken
 
+@table-darken-head-color: @light-secondary;
+@table-darken-divider: @light-divider;
 @table-darken-tr-hover-background-color: @table-darken-divider;
+
+// Lighten
+
+@table-lighten-head-color: @dark-secondary;
+@table-lighten-divider: @dark-divider;
+@table-lighten-tr-hover-background-color: @table-lighten-divider;
 
 
 // Style
@@ -102,12 +102,12 @@
 		vertical-align: top;
 		border-bottom: 1px solid @table-divider;
 
-		.table--lighten & {
-			border-color: @table-lighten-divider;
-		}
-
 		.table--darken & {
 			border-color: @table-darken-divider;
+		}
+
+		.table--lighten & {
+			border-color: @table-lighten-divider;
 		}
 
 		&:first-child {
@@ -126,14 +126,14 @@
 		color: @table-head-color;
 		fill: @table-head-color;
 
-		.table--lighten & {
-			color: @table-lighten-head-color;
-			fill: @table-lighten-head-color;
-		}
-
 		.table--darken & {
 			color: @table-darken-head-color;
 			fill: @table-darken-head-color;
+		}
+
+		.table--lighten & {
+			color: @table-lighten-head-color;
+			fill: @table-lighten-head-color;
 		}
 	}
 
@@ -146,19 +146,19 @@
 			background-color: fade(@table-tr-hover-background-color, 100%);
 		}
 
-		.table--lighten & {
-			border-color: fade(@table-lighten-tr-hover-background-color, 0);
-
-			&:hover {
-				background-color: fade(@table-lighten-tr-hover-background-color, 100%);
-			}
-		}
-
 		.table--darken & {
 			border-color: fade(@table-darken-tr-hover-background-color, 0);
 
 			&:hover {
 				background-color: fade(@table-darken-tr-hover-background-color, 100%);
+			}
+		}
+
+		.table--lighten & {
+			border-color: fade(@table-lighten-tr-hover-background-color, 0);
+
+			&:hover {
+				background-color: fade(@table-lighten-tr-hover-background-color, 100%);
 			}
 		}
 	}
