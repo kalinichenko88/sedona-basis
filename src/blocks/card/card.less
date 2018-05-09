@@ -1,16 +1,25 @@
 // Card
 //------------------------------------------------------------------------------
 
-@card-radius: @radius;
+// Base
 
 @card-border-width: 1px;
-@card-border-color: @base-divider;
+@card-border-radius: @radius;
+@card-link-color: @link-primary;
 
-@card-lighten-color: @dark-primary;
-@card-lighten-background: @light-primary;
+// Darken
 
 @card-darken-color: @light-primary;
 @card-darken-background: @dark-primary;
+@card-darken-link-color: @card-link-color;
+@card-darken-border-color: @light-divider;
+
+// Lighten
+
+@card-lighten-color: @dark-primary;
+@card-lighten-background: @light-primary;
+@card-lighten-link-color: @card-link-color;
+@card-lighten-border-color: @dark-divider;
 
 
 // Style
@@ -19,7 +28,7 @@
 .card {
 	min-height: 100%;
 	margin-bottom: @indent;
-	border-radius: @card-radius;
+	border-radius: @card-border-radius;
 	overflow: hidden;
 	position: relative;
 
@@ -27,29 +36,58 @@
 		margin-bottom: 0;
 	}
 
-	&--border,
-	&--lighten,
-	&--darken {
+	a {
+		.link(@card-link-color);
+
+		&:hover {
+			.link-hover(@card-link-color);
+		}
+	}
+
+	&--dark-contour,
+	&--light-contour,
+	&--darken,
+	&--lighten {
 		padding-top: @indent;
 		padding-bottom: @indent;
 		margin-right: (@grid-gutter / 2);
 		margin-left: (@grid-gutter / 2);
 	}
 
-	&--border {
-		border: @card-border-width solid @card-border-color;
+	&--dark-contour {
+		border: @card-border-width solid @card-darken-border-color;
 	}
 
-	&--lighten {
-		color: @card-lighten-color;
-		fill: @card-lighten-color;
-		background: @card-lighten-background;
+	&--light-contour {
+		border: @card-border-width solid @card-lighten-border-color;
 	}
 
 	&--darken {
 		color: @card-darken-color;
 		fill: @card-darken-color;
 		background: @card-darken-background;
+
+		a {
+			.link(@card-darken-link-color);
+
+			&:hover {
+				.link-hover(@card-darken-link-color);
+			}
+		}
+	}
+
+	&--lighten {
+		color: @card-lighten-color;
+		fill: @card-lighten-color;
+		background: @card-lighten-background;
+
+		a {
+			.link(@card-lighten-link-color);
+
+			&:hover {
+				.link-hover(@card-lighten-link-color);
+			}
+		}
 	}
 }
 
@@ -67,9 +105,10 @@
 	padding-right: (@grid-gutter / 2);
 	padding-left: (@grid-gutter / 2);
 
-	.card--border &,
-	.card--lighten &,
-	.card--darken & {
+	.card--dark-contour &,
+	.card--light-contour &,
+	.card--darken &,
+	.card--lighten & {
 		margin-top: -@indent;
 		margin-left: 0;
 		margin-right: 0;
@@ -99,4 +138,13 @@
 	padding-right: (@grid-gutter / 2);
 	padding-left: (@grid-gutter / 2);
 	max-width: 700px;
+
+	a::before {
+		position: absolute;
+		content: "";
+		top: -3000px;
+		right: -3000px;
+		bottom: -3000px;
+		left: -3000px;
+	}
 }
