@@ -1,11 +1,17 @@
 // Grid
 //------------------------------------------------------------------------------
 
+@grid-max-width: @grid-breakpoints-xl;
+
+
+// Style
+//------------------------------------------------------------------------------
+
 .grid {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-	max-width: @grid-breakpoints-xl;
+	max-width: @grid-max-width;
 	margin-right: auto;
 	margin-bottom: (@indent-element-smaller - @indent);
 	margin-left: auto;
