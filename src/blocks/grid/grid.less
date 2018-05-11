@@ -24,50 +24,6 @@
 		margin-bottom: -@indent;
 	}
 
-	&--jc-fs {
-		justify-content: flex-start;
-	}
-
-	&--jc-c {
-		justify-content: center;
-	}
-
-	&--jc-fe {
-		justify-content: flex-end;
-	}
-
-	&--jc-sb {
-		justify-content: space-between;
-	}
-
-	&--jc-sa {
-		justify-content: space-around;
-	}
-
-	&--ai-fs {
-		align-items: flex-start;
-	}
-
-	&--ai-c {
-		align-items: center;
-	}
-
-	&--ai-fe {
-		align-items: flex-end;
-	}
-
-	&--ai-s {
-		align-items: stretch;
-	}
-
-	&--ai-b {
-		align-items: baseline;
-	}
-
-	&--fluid {
-		max-width: none;
-	}
-
 	&--diff {
 		margin-bottom: 0;
 
@@ -84,13 +40,6 @@
 .grid__col {
 	width: 100%;
 	margin-bottom: @indent;
-	padding-right: (@grid-gutter / 2);
-	padding-left: (@grid-gutter / 2);
-
-	&--no-padding {
-		padding-right: 0;
-		padding-left: 0;
-	}
 
 	.grid--diff & {
 		margin-bottom: @indent-element-smaller;
@@ -99,6 +48,11 @@
 			margin-bottom: @indent-element-larger;
 		}
 	}
+}
+
+.grid__content {
+	padding-right: (@grid-gutter / 2);
+	padding-left: (@grid-gutter / 2);
 }
 
 
