@@ -4,13 +4,16 @@
 @form-control-border-width: 1px;
 @form-control-border-color: @base-divider;
 @form-control-border-radius: @radius;
+
 @form-control-padding-top: 6px;
 @form-control-padding-bottom: @form-control-padding-top;
 @form-control-padding-left: @indent;
 @form-control-padding-right: @form-control-padding-left;
+
 @form-control-color: @base-primary;
 @form-control-background-color: transparent;
 @form-hint-color: @base-hint;
+
 @form-breakpoints-desktop: @grid-breakpoints-md;
 
 
@@ -93,10 +96,9 @@
 .form__fields {
 	flex: 1 0 1px;
 
-	/*@media (max-width: (@grid-breakpoints-md - 1px)) {
-		width: 100% !important;
+	@media (max-width: (@form-breakpoints-desktop - 1px)) {
 		margin-left: 0 !important;
-	}*/
+	}
 }
 
 .form__line {
