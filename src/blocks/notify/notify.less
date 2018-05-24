@@ -9,6 +9,8 @@
 @notify-background: @base-divider;
 @notify-link-color: @link-primary;
 
+@notify-max-width: 500px;
+
 
 // Style
 //------------------------------------------------------------------------------
@@ -26,11 +28,11 @@
 	background: @notify-background;
 	color: @notify-color;
 	fill: @notify-color;
-	max-width: 500px;
+	max-width: @notify-max-width;
 	animation-duration: (@duration * 2);
 	animation-name: notifyShow;
 	animation-timing-function: @timing-function;
-	animation-fill-mode: both;
+	animation-fill-mode: forwards;
 
 	&--hide {
 		animation-duration: @duration;
@@ -79,7 +81,7 @@
 
 @keyframes notifyShow {
 	0% {
-		transform: translate3d(-110%, 0, 0);
+		transform: translate3d(-(@notify-max-width + @indent), 0, 0);
 	}
 
 	60% {
@@ -101,6 +103,6 @@
 	}
 
 	100% {
-		transform: translate3d(-110%, 0, 0);
+		transform: translate3d(-(@notify-max-width + @indent), 0, 0);
 	}
 }
