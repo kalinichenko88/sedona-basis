@@ -3,20 +3,26 @@
 
 // Base
 
-@table-head-font: normal @font-size-smaller/@line-height-smaller @font-family-primary;
+@table-head-font-size: @font-size-smaller;
+@table-head-line-height: @line-height-smaller;
+@table-head-font-weight: normal;
+@table-head-font-family: @font-family-primary;
 @table-head-color: @base-secondary;
+
 @table-divider: @base-divider;
 @table-tr-hover-background-color: @table-divider;
 
 // Darken
 
 @table-darken-head-color: @light-secondary;
+
 @table-darken-divider: @light-divider;
 @table-darken-tr-hover-background-color: @table-darken-divider;
 
 // Lighten
 
 @table-lighten-head-color: @dark-secondary;
+
 @table-lighten-divider: @dark-divider;
 @table-lighten-tr-hover-background-color: @table-lighten-divider;
 
@@ -92,7 +98,6 @@
 		width: 100%;
 		border-collapse: collapse;
 		border-spacing: 0;
-		text-align: left;
 	}
 
 	th,
@@ -101,6 +106,7 @@
 		overflow: hidden;
 		vertical-align: top;
 		border-bottom: 1px solid @table-divider;
+		text-align: left;
 
 		.table--darken & {
 			border-color: @table-darken-divider;
@@ -110,18 +116,21 @@
 			border-color: @table-lighten-divider;
 		}
 
-		&:first-child {
-			padding-left: 0;
-		}
+		// &:first-child {
+		// 	padding-left: 0;
+		// }
 
-		&:last-child {
-			padding-right: 0;
-		}
+		// &:last-child {
+		// 	padding-right: 0;
+		// }
 	}
 
 	th {
 		padding-top: 0;
-		font: @table-head-font;
+		font-size: @table-head-font-size;
+		font-weight: @table-head-font-weight;
+		font-family: @table-head-font-family;
+		line-height: @table-head-line-height;
 		vertical-align: bottom;
 		color: @table-head-color;
 		fill: @table-head-color;
