@@ -1,6 +1,6 @@
 # Фундамент
 
-Стартовый шаблон для верстки сайта.
+Стартовый шаблон для вёрстки сайта.
 
 ### Содержание
 
@@ -10,11 +10,11 @@
   * [Структура папок и файлов](#Структура-папок-и-файлов)
   * [Рекомендуемый лейаут](#Рекомендуемый-лейаут)
 * Настройка
-  * Основные
-  * Отступы
-  * Шрифты
-  * Сетка
+  * Основное
   * Цвета
+  * Типографика
+  * Отступы
+  * Сетка
 * Стиль
   * Иконки
 
@@ -78,4 +78,64 @@ src/                # Исходные файлы
     
   </footer>
 </div>
+```
+
+## Настройка
+
+Вся настройка производится через переменные в файле `variables.less`.
+
+### Основное
+
+```less
+@rhythm: 4px;
+```
+
+Шаг от которого строятся все последующие размеры.
+
+```less
+@radius: @rhythm;
+```
+
+Радиус скругления углов равен основному шагу.
+
+### Цвета
+
+```less
+@base-primary: @dark-primary;
+@base-secondary: @dark-secondary;
+@base-hint: @dark-hint;
+@base-divider: @dark-divider;
+```
+
+```less
+@brand-primary: #fec906;
+@brand-secondary: #fe3b48;
+```
+
+```less
+@dark-primary: lighten(#000, 12%);
+@dark-secondary: lighten(#000, 54%);
+@dark-hint: lighten(#000, 72%);
+@dark-divider: lighten(#000, 88%);
+```
+
+```less
+@light-primary: #fff;
+@light-secondary: darken(#fff, 30%);
+@light-hint: darken(#fff, 50%);
+@light-divider: darken(#fff, 72%);
+```
+
+```less
+@link-primary: #007aff;
+```
+
+```less
+@button-primary: @link-primary;
+```
+
+```less
+@alert-success: #4cd964;
+@alert-warning: #fc0;
+@alert-danger: #ff3b30;
 ```
