@@ -63,10 +63,6 @@
 		display: flex;
 		flex-wrap: nowrap;
 	}
-
-	/*&--nowrap {
-		flex-wrap: nowrap;
-	}*/
 }
 
 .form__label {
@@ -81,15 +77,6 @@
 		padding-top: @form-control-padding-top;
 		margin-bottom: 0;
 	}
-
-	/*&--hidden {
-		display: none;
-	}*/
-
-	/*.form__group--nowrap & {
-		padding-top: 6px;
-		padding-right: 0;
-	}*/
 }
 
 .form__fields {
@@ -140,8 +127,8 @@
 		min-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
 		appearance: none;
 		color: @form-control-color;
-		transition-property: box-shadow, border-color;
-		transition: @duration @timing-function;
+		// transition-property: box-shadow, border-color;
+		// transition: @duration @timing-function;
 		background-color: @form-control-background-color;
 
 		&::placeholder {
@@ -190,8 +177,8 @@
 		background-position: right (@form-control-padding-right - 5px) top 55%;
 		background-repeat: no-repeat;
 		background-size: 18px 18px;
-		transition-property: box-shadow, border-color;
-		transition: @duration @timing-function;
+		// transition-property: box-shadow, border-color;
+		// transition: @duration @timing-function;
 
 		&::-ms-expand {
 			display: none;
@@ -233,8 +220,8 @@
 		padding-left: (@form-control-padding-left - @form-control-border-width);
 		border-radius: @form-control-border-radius;
 		width: 100%;
-		transition-property: box-shadow, border-color;
-		transition: @duration @timing-function;
+		// transition-property: box-shadow, border-color;
+		// transition: @duration @timing-function;
 		appearance: none;
 		background-color: @form-control-background-color;
 
@@ -504,6 +491,8 @@
 		@media (min-width: @grid-breakpoints-sm) {
 			margin-bottom: 0;
 			margin-left: -1px;
+			width: auto;
+			flex-grow: 1;
 		}
 	}
 
