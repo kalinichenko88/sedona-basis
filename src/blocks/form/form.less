@@ -57,11 +57,10 @@
 }*/
 
 .form__group {
-	display: flex;
-	flex-wrap: wrap;
 	margin-bottom: @indent;
 
 	@media (min-width: @form-breakpoints-desktop) {
+		display: flex;
 		flex-wrap: nowrap;
 	}
 
@@ -94,7 +93,9 @@
 }
 
 .form__fields {
-	flex: 1 0 1px;
+	@media (min-width: @form-breakpoints-desktop) {
+		flex: 1 0 0%;
+	}
 
 	@media (max-width: (@form-breakpoints-desktop - 1px)) {
 		margin-left: 0 !important;
@@ -188,7 +189,7 @@
 		background-image: url("data:image/svg+xml, @{icon}");
 		background-position: right (@form-control-padding-right - 5px) top 55%;
 		background-repeat: no-repeat;
-		background-size: 18px;
+		background-size: 18px 18px;
 		transition-property: box-shadow, border-color;
 		transition: @duration @timing-function;
 
@@ -296,7 +297,7 @@
 		fill: @dark-primary;
 
 		@media (min-width: @grid-breakpoints-sm) {
-			flex: 1 0 1px;
+			flex: 1 0 0%;
 		}
 
 		a {
