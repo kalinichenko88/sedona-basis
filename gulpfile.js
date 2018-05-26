@@ -43,7 +43,8 @@ const paths = {
 		],
 		css: {
 			libs: [
-				'node_modules/normalize.css/normalize.css'
+				'node_modules/normalize.css/normalize.css',
+				'node_modules/ion-rangeslider/css/ion.rangeSlider.css'
 			],
 			main: [
 				'node_modules/sedona-blocks/scene/scene.less',
@@ -53,7 +54,10 @@ const paths = {
 			]
 		},
 		js: {
-			libs: [],
+			libs: [
+				'node_modules/jquery/dist/jquery.min.js',
+				'node_modules/ion-rangeslider/js/ion.rangeSlider.min.js'
+			],
 			app: [
 				'src/js/app.js'
 			]
