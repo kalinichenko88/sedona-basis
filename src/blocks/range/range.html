@@ -1,3 +1,93 @@
-<input type="text" class="range" data-hide-min-max="true" data-hide-from-to="true">
+<form class="form" action="#" method="post">
+	<div class="form__group">
+		<div class="form__label" style="width: 30%;">
+			<label for="name">Имя и фамилия</label>
+		</div>
 
-<input type="text" class="range" data-type="double" data-hide-min-max="true" data-hide-from-to="true">
+		<div class="form__fields">
+			<div class="form__line">
+				<div class="form__control" style="width: 100%;">
+					<input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form__group">
+		<div class="form__label" style="width: 30%;">
+			<label for="single">Одиночный слайдер</label>
+		</div>
+
+		<div class="form__fields">
+			<div class="form__line">
+				<div class="form__control" style="width: 100%;">
+					<input type="text" class="range" id="single" name="single" data-hide-min-max="true" data-hide-from-to="true">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form__group">
+		<div class="form__label" style="width: 30%;">
+			<label for="double">Двойной диапазон</label>
+		</div>
+
+		<div class="form__fields">
+			<div class="form__line">
+				<div class="form__control" style="width: 100%;">
+					<input type="text" class="range" id="double" name="double" data-type="double" data-hide-min-max="true" data-hide-from-to="true">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form__group">
+		<div class="form__label" style="width: 30%;">
+			<label for="single">Одиночный слайдер</label>
+		</div>
+
+		<div class="form__fields">
+			<div class="form__line">
+				<div class="form__control" style="width: 80%;">
+					<input type="text" class="range" id="single" name="single" data-hide-min-max="true" data-hide-from-to="true">
+				</div>
+
+				<div class="form__control" style="width: 20%;">
+					<input type="text" name="name">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form__group">
+		<div class="form__label" style="width: 30%;">
+			<label for="double">Двойной диапазон</label>
+		</div>
+
+		<div class="form__fields">
+			<div class="form__line">
+				<div class="form__control" style="width: 20%;">
+					<input type="text" name="qwe">
+				</div>
+
+				<div class="form__control" style="width: 60%;">
+					<input type="text" class="range" id="double" name="double" data-type="double" data-hide-min-max="true" data-hide-from-to="true" data-from-input-name="qwe" data-to-input-name="rty">
+				</div>
+
+				<div class="form__control" style="width: 20%;">
+					<input type="text" name="rty">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form__group">
+		<div class="form__fields" style="margin-left: 30%;">
+			<div class="form__line">
+				<div class="form__control">
+					<button class="btn" type="submit">Отправить</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

@@ -50,6 +50,7 @@ const paths = {
 				'node_modules/sedona-blocks/scene/scene.less',
 				'node_modules/sedona-blocks/wysiwyg/wysiwyg.less',
 				'node_modules/sedona-blocks/grid/grid.less',
+				'node_modules/sedona-blocks/form/form.less',
 				'src/less/main.less'
 			]
 		},
