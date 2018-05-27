@@ -4,10 +4,12 @@
 // Base
 
 @header-height: (@line-height + @indent * 2);
+
 @header-color: @base-primary;
 @header-background: none;
 @header-link-color: @link-primary;
-@header-breakpoints-desktop: @grid-breakpoints-md;
+
+@header-breakpoints: @grid-breakpoints-md;
 @header-max-width: @grid-breakpoints-xl;
 
 // Darken
@@ -33,7 +35,7 @@
 	fill: @header-color;
 	background: @header-background;
 
-	@media (min-width: @header-breakpoints-desktop) {
+	@media (min-width: @header-breakpoints) {
 		padding-right: (@grid-gutter / 2);
 		padding-left: (@grid-gutter / 2);
 	}
@@ -92,7 +94,7 @@
 	margin-right: auto;
 	margin-left: auto;
 
-	@media (min-width: @header-breakpoints-desktop) {
+	@media (min-width: @header-breakpoints) {
 		flex-direction: row;
 	}
 }
@@ -106,7 +108,7 @@
 		padding-left: (@grid-gutter / 2);
 	}
 
-	@media (min-width: @header-breakpoints-desktop) {
+	@media (min-width: @header-breakpoints) {
 		min-height: auto;
 		padding-right: 0;
 		padding-left: 0;
@@ -127,7 +129,7 @@
 	padding-left: 0;
 	list-style-type: none;
 
-	@media (min-width: @header-breakpoints-desktop) {
+	@media (min-width: @header-breakpoints) {
 		display: none;
 	}
 
@@ -230,7 +232,7 @@
 		padding-left: (@grid-gutter / 2);
 	}
 
-	@media (min-width: @header-breakpoints-desktop) {
+	@media (min-width: @header-breakpoints) {
 		display: flex !important;
 		margin-left: auto;
 		padding: 0;
@@ -243,7 +245,7 @@
 	& > *:not(:first-child) {
 		margin-top: @indent;
 
-		@media (min-width: @header-breakpoints-desktop) {
+		@media (min-width: @header-breakpoints) {
 			margin-top: 0;
 		}
 	}
@@ -259,7 +261,7 @@
 		padding-left: 0;
 		list-style-type: none;
 
-		@media (min-width: @header-breakpoints-desktop) {
+		@media (min-width: @header-breakpoints) {
 			flex-wrap: nowrap !important;
 			margin-bottom: 0;
 		}
@@ -273,7 +275,7 @@
 		padding-left: (@grid-gutter / 2);
 		white-space: nowrap;
 
-		@media (min-width: @header-breakpoints-desktop) {
+		@media (min-width: @header-breakpoints) {
 			width: auto;
 			margin-bottom: 0;
 			line-height: @header-height;
@@ -289,7 +291,7 @@
 	padding-left: 0;
 	list-style-type: none;
 
-	@media (min-width: @header-breakpoints-desktop) {
+	@media (min-width: @header-breakpoints) {
 		flex-wrap: nowrap;
 		width: auto;
 		margin-bottom: 0;
@@ -302,7 +304,7 @@
 	&--hidden-mobile {
 		display: none;
 
-		@media (min-width: @header-breakpoints-desktop) {
+		@media (min-width: @header-breakpoints) {
 			display: flex;
 		}
 	}
@@ -315,7 +317,7 @@
 		padding-left: (@grid-gutter / 2);
 		white-space: nowrap;
 
-		@media (min-width: @header-breakpoints-desktop) {
+		@media (min-width: @header-breakpoints) {
 			width: auto;
 			margin-bottom: 0;
 			line-height: @header-height;
