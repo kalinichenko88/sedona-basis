@@ -11,7 +11,23 @@
 @form-control-padding-right: @form-control-padding-left;
 
 @form-control-color: @base-primary;
+
 @form-control-background-color: transparent;
+@form-control-background-image: none;
+@form-control-background-repeat: repeat;
+@form-control-background-position: 0 0;
+@form-control-background-size: auto auto;
+
+@form-control-hover-border-color: @base-hint;
+@form-control-hover-background-color: @form-control-background-color;
+
+@form-control-focus-outline-width: 2px;
+@form-control-focus-outline-color: @form-control-border-color;
+@form-control-focus-border-color: @form-control-hover-border-color;
+@form-control-focus-background-color: @form-control-hover-background-color;
+
+@form-control-disabled-border-color: @form-control-border-color;
+@form-control-disabled-background-color: @form-control-disabled-border-color;
 
 @form-hint-color: @base-hint;
 
@@ -22,40 +38,8 @@
 //------------------------------------------------------------------------------
 
 .form {
-	/*display: flex;
-	flex-wrap: wrap;*/
-	/*margin-right: (@grid-gutter / -2);
-	margin-left: (@grid-gutter / -2);*/
 	margin-bottom: -@indent;
-	/*animation-duration: 1s;
-	animation-fill-mode: both;
-
-	&--shake {
-		animation-name: shake;
-	}*/
 }
-
-/*@keyframes shake {
-	from,
-	to {
-		transform: translate3d(0, 0, 0);
-	}
-
-	10%,
-	30%,
-	50%,
-	70%,
-	90% {
-		transform: translate3d(-10px, 0, 0);
-	}
-
-	20%,
-	40%,
-	60%,
-	80% {
-		transform: translate3d(10px, 0, 0);
-	}
-}*/
 
 .form__group {
 	margin-bottom: @indent;
@@ -94,8 +78,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	/*padding-left: (@grid-gutter / 2);
-	padding-right: (@grid-gutter / 4);*/
 	margin-bottom: (@indent / -2);
 	margin-right: (@grid-gutter / -4);
 
@@ -128,17 +110,23 @@
 		min-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
 		appearance: none;
 		color: @form-control-color;
-		// transition-property: box-shadow, border-color;
-		// transition: @duration @timing-function;
+		transition-property: box-shadow, border-color, background-color;
+		transition: @duration @timing-function;
 		background-color: @form-control-background-color;
+		background-image: @form-control-background-image;
+		background-repeat: @form-control-background-repeat;
+		background-position: @form-control-background-position;
+		background-size: @form-control-background-size;
 
 		&::placeholder {
 			color: @form-hint-color;
 		}
 
-		/*&:focus {
+		&:focus {
 			outline: none;
-			box-shadow: 0px 0px 0px 3px fade(@brand-quaternary, 50%);
+			box-shadow: 0px 0px 0px @form-control-focus-outline-width @form-control-focus-outline-color;
+			border-color: @form-control-focus-border-color;
+			background-color: @form-control-focus-background-color;
 
 			.no-focus & {
 				box-shadow: none;
@@ -146,15 +134,19 @@
 		}
 
 		&:not([readonly]):hover,
-		&:not([readonly]):focus {
-			border-color: fade(@brand-quaternary, 75%);
+		&:not([readonly]):focus,
+		&:not([disabled]):hover,
+		&:not([disabled]):focus {
+			border-color: @form-control-hover-border-color;
+			background-color: @form-control-hover-background-color;
 		}
 
-		&[readonly] {
-			cursor: default;
-			border-color: fade(@brand-quaternary, 10%);
-			background-color: transparent;
-		}*/
+		&[readonly],
+		&[disabled] {
+			cursor: not-allowed;
+			border-color: @form-control-disabled-border-color !important;
+			background-color: @form-control-disabled-background-color !important;
+		}
 	}
 
 	select {
@@ -174,40 +166,42 @@
 		min-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
 		appearance: none;
 		background-color: @form-control-background-color;
-		background-image: url("data:image/svg+xml, @{icon}");
-		background-position: right (@form-control-padding-right - 5px) top 55%;
-		background-repeat: no-repeat;
-		background-size: 18px 18px;
-		// transition-property: box-shadow, border-color;
-		// transition: @duration @timing-function;
+		background-image: url("data:image/svg+xml, @{icon}"), @form-control-background-image;
+		background-repeat: no-repeat, @form-control-background-repeat;
+		background-position: right (@form-control-padding-right - 5px) top 55%, @form-control-background-position;
+		background-size: 18px 18px, @form-control-background-size;
+		transition-property: box-shadow, border-color, background-color;
+		transition: @duration @timing-function;
 
 		&::-ms-expand {
 			display: none;
 		}
 
-		/*&:focus {
+		&:focus {
 			outline: none;
-			box-shadow: 0px 0px 0px 3px fade(@brand-quaternary, 50%);
+			box-shadow: 0px 0px 0px @form-control-focus-outline-width @form-control-focus-outline-color;
+			border-color: @form-control-focus-border-color;
+			background-color: @form-control-focus-background-color;
 
 			.no-focus & {
 				box-shadow: none;
 			}
 		}
 
-		@media (max-width: (@grid-breakpoints-md - 1px)) {
-			width: 100% !important;
-		}
-
 		&:not([readonly]):hover,
-		&:not([readonly]):focus {
-			border-color: fade(@brand-quaternary, 75%);
+		&:not([readonly]):focus,
+		&:not([disabled]):hover,
+		&:not([disabled]):focus {
+			border-color: @form-control-hover-border-color;
+			background-color: @form-control-hover-background-color;
 		}
 
-		&[readonly] {
-			cursor: default;
-			border-color: fade(@brand-quaternary, 10%);
-			background-color: transparent;
-		}*/
+		&[readonly],
+		&[disabled] {
+			cursor: not-allowed;
+			border-color: @form-control-disabled-border-color !important;
+			background-color: @form-control-disabled-background-color !important;
+		}
 	}
 
 	textarea {
@@ -221,18 +215,25 @@
 		padding-left: (@form-control-padding-left - @form-control-border-width);
 		border-radius: @form-control-border-radius;
 		width: 100%;
-		// transition-property: box-shadow, border-color;
-		// transition: @duration @timing-function;
+		transition-property: box-shadow, border-color, background-color;
+		transition: @duration @timing-function;
 		appearance: none;
 		background-color: @form-control-background-color;
+		background-image: @form-control-background-image;
+		background-repeat: @form-control-background-repeat;
+		background-position: @form-control-background-position;
+		background-size: @form-control-background-size;
+		min-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
 
 		&::placeholder {
 			color: @form-hint-color;
 		}
 
-		/*&:focus {
+		&:focus {
 			outline: none;
-			box-shadow: 0px 0px 0px 3px fade(@brand-quaternary, 50%);
+			box-shadow: 0px 0px 0px @form-control-focus-outline-width @form-control-focus-outline-color;
+			border-color: @form-control-focus-border-color;
+			background-color: @form-control-focus-background-color;
 
 			.no-focus & {
 				box-shadow: none;
@@ -240,15 +241,19 @@
 		}
 
 		&:not([readonly]):hover,
-		&:not([readonly]):focus {
-			border-color: fade(@brand-quaternary, 75%);
+		&:not([readonly]):focus,
+		&:not([disabled]):hover,
+		&:not([disabled]):focus {
+			border-color: @form-control-hover-border-color;
+			background-color: @form-control-hover-background-color;
 		}
 
-		&[readonly] {
-			cursor: default;
-			border-color: fade(@brand-quaternary, 10%);
-			background-color: transparent;
-		}*/
+		&[readonly],
+		&[disabled] {
+			cursor: not-allowed;
+			border-color: @form-control-disabled-border-color !important;
+			background-color: @form-control-disabled-background-color !important;
+		}
 	}
 }
 
