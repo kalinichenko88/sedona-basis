@@ -3,9 +3,9 @@
 
 (function($) {
 	$('.range').each(function() {
-		var range = $(this);
-		var rangeFromInput = range.attr('data-from-input-name');
-		var rangeToInput = range.attr('data-to-input-name');
+		let range = $(this);
+		let rangeFromInput = range.attr('data-from-input-name');
+		let rangeToInput = range.attr('data-to-input-name');
 
 		range.ionRangeSlider({
 			onStart: function(data) {
