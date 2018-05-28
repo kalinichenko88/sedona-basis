@@ -12,9 +12,11 @@
 * Настройка
   * Основное
   * Цвета
-  * Типографика
+  * [Типографика](#Типографика)
+    * Шрифт
+    * Кегль и интерлиньяж
   * Отступы
-  * Сетка
+  * [Сетка](#Сетка)
 * Стиль
   * Иконки
 
@@ -86,15 +88,10 @@ src/                # Исходные файлы
 
 ### Основное
 
-Шаг от которого строятся все последующие размеры:
+Шаг от которого строятся все последующие размеры и радиус скругления:
 
 ```less
 @rhythm: 4px;
-```
-
-Радиус скругления углов:
-
-```less
 @radius: @rhythm; // 4px
 ```
 
@@ -102,7 +99,7 @@ src/                # Исходные файлы
 
 #### Шрифт
 
-Шрифт — системный. Вторичный шрифт служит для заголовков H1, H2 и H3:
+Шрифт на каждой системе свой. Вторичный шрифт служит для заголовков H1, H2 и H3:
 
 ```less
 @font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -150,6 +147,8 @@ src/                # Исходные файлы
 
 ### Анимация
 
+Продолжительность анимации и временна́я функция:
+
 ```less
 @duration: 0.2s;
 @timing-function: ease-out;
@@ -158,41 +157,61 @@ src/                # Исходные файлы
 ### Цвета
 
 ```less
-@base-primary: @dark-primary;
-@base-secondary: @dark-secondary;
-@base-hint: @dark-hint;
-@base-divider: @dark-divider;
-```
+// Base
 
-```less
+@base-primary: @dark-primary; // #1f1f1f
+@base-secondary: @dark-secondary; // #8a8a8a
+@base-hint: @dark-hint; // #b8b8b8
+@base-divider: @dark-divider; // #e0e0e0
+
+// Brand
+
 @brand-primary: #fec906;
 @brand-secondary: #fe3b48;
-```
 
-```less
-@dark-primary: lighten(#000, 12%);
-@dark-secondary: lighten(#000, 54%);
-@dark-hint: lighten(#000, 72%);
-@dark-divider: lighten(#000, 88%);
-```
+// Dark
 
-```less
+@dark-primary: lighten(#000, 12%); // #1f1f1f
+@dark-secondary: lighten(#000, 54%); // #8a8a8a
+@dark-hint: lighten(#000, 72%); // #b8b8b8
+@dark-divider: lighten(#000, 88%); // #e0e0e0
+
+// Light
+
 @light-primary: #fff;
-@light-secondary: darken(#fff, 30%);
-@light-hint: darken(#fff, 50%);
-@light-divider: darken(#fff, 72%);
-```
+@light-secondary: darken(#fff, 30%); // #b3b3b3
+@light-hint: darken(#fff, 50%); // #808080
+@light-divider: darken(#fff, 72%); // #474747
 
-```less
+// Links
+
 @link-primary: #007aff;
-```
 
-```less
-@button-primary: @link-primary;
-```
+// Buttons
 
-```less
+@button-primary: @link-primary; // #007aff
+
+// Alerts
+
 @alert-success: #4cd964;
 @alert-warning: #fc0;
 @alert-danger: #ff3b30;
+```
+
+### Сетка
+
+Mobile first. Четыре контрольных точки:
+
+```less
+@grid-breakpoints-sm: 576px;
+@grid-breakpoints-md: 768px;
+@grid-breakpoints-lg: 992px;
+@grid-breakpoints-xl: 1200px;
+```
+
+Количество колонок и расстояние между ними:
+
+```less
+@grid-columns: 12;
+@grid-gutter: (@indent * 2); // 32px
 ```
