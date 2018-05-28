@@ -236,12 +236,22 @@ Mobile first. Четыре контрольных точки:
 
 ### Отступы
 
+Между параграфами:
+
 ```less
 @indent: @font-size; // 16px
+```
 
+Между блоками (для маленьких и больших экранов):
+
+```less
 @indent-block-smaller: (@indent * 3); // 48px
 @indent-block-larger: (@indent * 6); // 96px
+```
 
+Между элементами (для маленьких и больших экранов):
+
+```less
 @indent-element-smaller: (@indent * 2); // 32px
 @indent-element-larger: (@indent * 3); // 48px
 ```
