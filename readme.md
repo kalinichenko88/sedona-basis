@@ -9,16 +9,17 @@
   * [Сборка](#Сборка)
   * [Структура папок и файлов](#Структура-папок-и-файлов)
   * [Рекомендуемый лейаут](#Рекомендуемый-лейаут)
-* Настройка
-  * Основное
-  * Цвета
+* [Настройка](#Настройка)
+  * [Основное](#Основное)
+  * [Цвета](#Цвета)
   * [Типографика](#Типографика)
-    * Шрифт
-    * Кегль и интерлиньяж
+    * [Шрифт](#Шрифт)
+    * [Кегль и интерлиньяж](#Кегль-и-интерлиньяж)
   * Отступы
   * [Сетка](#Сетка)
-* Стиль
-  * Иконки
+  * [Анимация](#Анимация)
+* [Стиль](#Стиль)
+  * [Иконки](#Иконки)
 
 ## Как работает
 
@@ -108,24 +109,30 @@ src/                # Исходные файлы
 
 #### Кегль и интерлиньяж
 
-```less
-// Normal
+Базовый:
 
+```less
 @font-size: (@rhythm * 4); // 16px
 @line-height: (@rhythm * 7); // 28px
+```
 
-// Small
+Уменьшенный:
 
+```less
 @font-size-smaller: (@rhythm * 3); // 12px
 @line-height-smaller: (@rhythm * 5); // 20px
+```
 
-// Large
+Увеличенный:
 
+```less
 @font-size-larger: (@rhythm * 6); // 24px
 @line-height-larger: (@rhythm * 8); // 32px
+```
 
-// Headers
+Заголовочный (обычный — для маленьких и увеличенный — для больших экранов):
 
+```less
 @font-size-h1: (@rhythm * 8); // 32px
 @line-height-h1: (@rhythm * 10); // 40px
 
@@ -156,42 +163,45 @@ src/                # Исходные файлы
 
 ### Цвета
 
+Основной цвет должен быть описан в переменной. Далее в коде его можно изменять с помощью [less-функций](http://lesscss.org/functions/#color-operations).
+
+Цвет может быть темным (для светлого фона) или светлым (для темного фона):
+
 ```less
-// Base
-
-@base-primary: @dark-primary; // #1f1f1f
-@base-secondary: @dark-secondary; // #8a8a8a
-@base-hint: @dark-hint; // #b8b8b8
-@base-divider: @dark-divider; // #e0e0e0
-
-// Brand
-
-@brand-primary: #fec906;
-@brand-secondary: #fe3b48;
-
-// Dark
-
 @dark-primary: lighten(#000, 12%); // #1f1f1f
 @dark-secondary: lighten(#000, 54%); // #8a8a8a
 @dark-hint: lighten(#000, 72%); // #b8b8b8
 @dark-divider: lighten(#000, 88%); // #e0e0e0
 
-// Light
-
 @light-primary: #fff;
 @light-secondary: darken(#fff, 30%); // #b3b3b3
 @light-hint: darken(#fff, 50%); // #808080
 @light-divider: darken(#fff, 72%); // #474747
+```
 
-// Links
+Базовый цвет отвечает за цвет по-умолчанию (обычно это темный):
 
+```less
+@base-primary: @dark-primary; // #1f1f1f
+@base-secondary: @dark-secondary; // #8a8a8a
+@base-hint: @dark-hint; // #b8b8b8
+@base-divider: @dark-divider; // #e0e0e0
+```
+
+Брендовые цвета (можно дополнять при необходимости):
+
+```less
+@brand-primary: #fec906;
+@brand-secondary: #fe3b48;
+…
+```
+
+Цвета ссылок, кнопок и уведомлений:
+
+```less
 @link-primary: #007aff;
 
-// Buttons
-
 @button-primary: @link-primary; // #007aff
-
-// Alerts
 
 @alert-success: #4cd964;
 @alert-warning: #fc0;
@@ -215,3 +225,9 @@ Mobile first. Четыре контрольных точки:
 @grid-columns: 12;
 @grid-gutter: (@indent * 2); // 32px
 ```
+
+## Стиль
+
+### Иконки
+
+Основные иконки — [Material Icons](https://material.io/tools/icons/)
