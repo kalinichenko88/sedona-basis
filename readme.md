@@ -154,9 +154,9 @@ src/                # Исходные файлы
 
 ### Цвета
 
-Основной цвет должен быть описан в переменной. Далее в коде его можно изменять с помощью [less-функций](http://lesscss.org/functions/#color-operations).
+Основной цвет должен быть описан в переменной. Далее в коде его оттенки можно изменять с помощью [less-функций](http://lesscss.org/functions/#color-operations).
 
-Цвет может быть темным (для светлого фона) или светлым (для темного фона).
+Цвет шрифта может быть темным (для светлого фона) или светлым (для темного фона).
 
 Цвет имеет четыре оттенка (основной, вторичный, для подсказок и для разделителей):
 
@@ -212,13 +212,13 @@ src/                # Исходные файлы
 Mobile first. Четыре контрольных точки:
 
 ```less
-@grid-breakpoints-sm: 576px;
-@grid-breakpoints-md: 768px;
-@grid-breakpoints-lg: 992px;
-@grid-breakpoints-xl: 1200px;
+@grid-breakpoints-sm: 576px; // Phone
+@grid-breakpoints-md: 768px; // Tablet
+@grid-breakpoints-lg: 992px; // Notebook
+@grid-breakpoints-xl: 1200px; // Desktop
 ```
 
-Количество колонок и расстояние между ними:
+Количество колонок и промежуток между ними:
 
 ```less
 @grid-columns: 12;
