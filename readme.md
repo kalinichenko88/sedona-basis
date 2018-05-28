@@ -82,21 +82,37 @@ src/                # Исходные файлы
 
 ## Настройка
 
-Вся настройка производится через переменные в файле `variables.less`.
+Вся настройка производится через переменные в файле variables.less. Если не хватает текущих настроек, то допускается создание новых переменных для конкретного сайта.
 
 ### Основное
+
+Шаг от которого строятся все последующие размеры:
 
 ```less
 @rhythm: 4px;
 ```
 
-Шаг от которого строятся все последующие размеры.
+Радиус скругления углов:
 
 ```less
-@radius: @rhythm;
+@radius: @rhythm; // 4px
 ```
 
-Радиус скругления углов равен основному шагу.
+### Шрифт
+
+Шрифт системный. Вторичный шрифт служит для заголовков H1, H2 и H3:
+
+```less
+@font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@font-family-secondary: @font-family-primary; // -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol"
+```
+
+### Анимация
+
+```less
+@duration: 0.2s;
+@timing-function: ease-out;
+```
 
 ### Цвета
 
