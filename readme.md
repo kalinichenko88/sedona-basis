@@ -105,6 +105,7 @@ src/                # Исходные файлы
 ```less
 @font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol";
 @font-family-secondary: @font-family-primary; // -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol"
+…
 ```
 
 #### Кегль и интерлиньяж
@@ -181,7 +182,7 @@ src/                # Исходные файлы
 @base-divider: @dark-divider; // #e0e0e0
 ```
 
-Брендовые цвета (можно дополнять при необходимости):
+Брендовые цвета:
 
 ```less
 @brand-primary: #fec906;
@@ -189,7 +190,7 @@ src/                # Исходные файлы
 …
 ```
 
-Цвета ссылок и кнопок (можно дополнять при необходимости):
+Цвета ссылок и кнопок:
 
 ```less
 @link-primary: #007aff;
