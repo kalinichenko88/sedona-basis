@@ -235,7 +235,7 @@ Mobile first. Четыре контрольных точки:
 @timing-function: ease-out;
 ```
 
-### Отступы
+### Отступы (https://yadi.sk/i/jyL2YltT3Wedr2)
 
 Между параграфами:
 
