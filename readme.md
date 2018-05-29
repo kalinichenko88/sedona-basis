@@ -235,7 +235,7 @@ Mobile first. Четыре контрольных точки:
 @timing-function: ease-out;
 ```
 
-### Отступы (https://yadi.sk/i/jyL2YltT3Wedr2)
+### Отступы ([1](https://downloader.disk.yandex.ru/preview/efb3a19b8ef997ee5319947f6257241417d8221ac619e549d57e08bbbca56720/5b0d5c26/owZRCHi1W379jUap3YR-jK4YZyd5Ttil2wmWFXYzBgDAzCLlWJEVs-euLktDoQGLeo8Jlj2h5xJ9a0rBDLP66w%3D%3D?uid=0&filename=2018-05-29_12-49-04.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048) [2](https://downloader.disk.yandex.ru/preview/09c633a118d869f99af6918065e34e96a7dabad97fac240e2e2e15663d9cc9f2/5b0d5c32/owZRCHi1W379jUap3YR-jH98fFwz_3axHr-EVKXkelyg6ZuT279w3Rn-x7gWGZeCqxsZiF36F7atEv70jYg77A%3D%3D?uid=0&filename=2018-05-29_12-50-04.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048) [3](https://downloader.disk.yandex.ru/preview/0f396f1d6c1a4ca29b712e654b7ebc246bb2c72d39881b5530b90a74e5b6783a/5b0d5c44/owZRCHi1W379jUap3YR-jEpmuxn02w8yYX2Q2-YRnLTwOiTkZEVwT2C2DcqquhACreMaS0jYQhnFMS_IN8xXlw%3D%3D?uid=0&filename=2018-05-29_12-50-04%20%282%29.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048) [4](https://downloader.disk.yandex.ru/preview/c99066e1e3071c36c2fd3f030034650805f5c2120701b4b3d278767260e128d0/5b0d5c50/owZRCHi1W379jUap3YR-jCsduczjkXrbrgKZLpYhkoFDPh2AAvClhKjJgMCCfgKmi_9gyW7jv-qyTgdVApDn_A%3D%3D?uid=0&filename=2018-05-29_12-50-04%20%282%29%20%282%29.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048))
 
 Между параграфами:
 
