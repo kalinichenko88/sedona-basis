@@ -1,6 +1,8 @@
 // Form
 //------------------------------------------------------------------------------
 
+@form-control-color: @base-primary;
+
 @form-control-border-width: 1px;
 @form-control-border-color: @base-divider;
 @form-control-border-radius: @radius;
@@ -10,15 +12,13 @@
 @form-control-padding-left: @indent;
 @form-control-padding-right: @form-control-padding-left;
 
-@form-control-color: @base-primary;
-
 @form-control-background-color: transparent;
 @form-control-background-image: none;
 @form-control-background-repeat: repeat;
 @form-control-background-position: 0 0;
 @form-control-background-size: auto auto;
 
-@form-control-hover-border-color: @base-hint;
+@form-control-hover-border-color: darken(@form-control-border-color, 15%);
 @form-control-hover-background-color: @form-control-background-color;
 
 @form-control-focus-outline-width: 2px;
@@ -26,10 +26,21 @@
 @form-control-focus-border-color: @form-control-hover-border-color;
 @form-control-focus-background-color: @form-control-hover-background-color;
 
-@form-control-disabled-border-color: @form-control-border-color;
-@form-control-disabled-background-color: @form-control-disabled-border-color;
+@form-control-danger-border-color: lighten(@alert-danger, 25%);
+@form-control-danger-background-color: @form-control-background-color;
+
+@form-control-danger-hover-border-color: darken(@form-control-danger-border-color, 10%);
+@form-control-danger-hover-background-color: @form-control-danger-background-color;
+
+@form-control-danger-focus-outline-color: @form-control-danger-border-color;
+@form-control-danger-focus-border-color: @form-control-danger-hover-border-color;
+@form-control-danger-focus-background-color: @form-control-danger-hover-background-color;
 
 @form-hint-color: @base-hint;
+@form-hint-danger-color: @alert-danger;
+
+@form-hint-font-size: @font-size-smaller;
+@form-hint-line-height: @line-height-smaller;
 
 @form-breakpoints: @grid-breakpoints-md;
 
@@ -75,6 +86,7 @@
 }
 
 .form__line {
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -96,31 +108,29 @@
 	display: inline-flex;
 	align-items: center;
 
-	input {
+	input,
+	select,
+	textarea {
 		display: block;
 		border-width: @form-control-border-width;
 		border-style: solid;
 		border-color: @form-control-border-color;
+		border-radius: @form-control-border-radius;
 		padding-top: (@form-control-padding-top - @form-control-border-width);
 		padding-right: (@form-control-padding-right - @form-control-border-width);
 		padding-bottom: (@form-control-padding-bottom - @form-control-border-width);
 		padding-left: (@form-control-padding-left - @form-control-border-width);
-		border-radius: @form-control-border-radius;
 		width: 100%;
-		min-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
 		appearance: none;
+		min-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
 		color: @form-control-color;
-		transition-property: box-shadow, border-color, background-color;
-		transition: @duration @timing-function;
 		background-color: @form-control-background-color;
 		background-image: @form-control-background-image;
 		background-repeat: @form-control-background-repeat;
 		background-position: @form-control-background-position;
 		background-size: @form-control-background-size;
-
-		&::placeholder {
-			color: @form-hint-color;
-		}
+		transition-property: box-shadow, border-color, background-color;
+		transition: @duration @timing-function;
 
 		&:focus {
 			outline: none;
@@ -133,135 +143,77 @@
 			}
 		}
 
-		&:not([readonly]):hover,
-		&:not([readonly]):focus,
 		&:not([disabled]):hover,
 		&:not([disabled]):focus {
 			border-color: @form-control-hover-border-color;
 			background-color: @form-control-hover-background-color;
 		}
 
-		&[readonly],
 		&[disabled] {
 			cursor: not-allowed;
-			border-color: @form-control-disabled-border-color !important;
-			background-color: @form-control-disabled-background-color !important;
+			opacity: 0.5;
+		}
+	}
+
+	input,
+	textarea {
+		&::placeholder {
+			color: @form-hint-color;
 		}
 	}
 
 	select {
 		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-hint-color}'><path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/></svg>");
 
-		display: block;
-		border-width: @form-control-border-width;
-		border-style: solid;
-		border-color: @form-control-border-color;
-		padding-top: (@form-control-padding-top - @form-control-border-width);
 		padding-right: (@form-control-padding-right * 2 + 8px - @form-control-border-width);
-		padding-bottom: (@form-control-padding-bottom - @form-control-border-width);
-		padding-left: (@form-control-padding-left - @form-control-border-width);
-		border-radius: @form-control-border-radius;
-		color: @form-control-color;
-		width: 100%;
-		min-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
-		appearance: none;
-		background-color: @form-control-background-color;
 		background-image: url("data:image/svg+xml, @{icon}"), @form-control-background-image;
 		background-repeat: no-repeat, @form-control-background-repeat;
 		background-position: right (@form-control-padding-right - 5px) top 55%, @form-control-background-position;
 		background-size: 18px 18px, @form-control-background-size;
-		transition-property: box-shadow, border-color, background-color;
-		transition: @duration @timing-function;
 
 		&::-ms-expand {
 			display: none;
 		}
+	}
+
+	&--danger input,
+	&--danger select,
+	&--danger textarea {
+		border-color: @form-control-danger-border-color;
+		background-color: @form-control-danger-background-color;
 
 		&:focus {
-			outline: none;
-			box-shadow: 0px 0px 0px @form-control-focus-outline-width @form-control-focus-outline-color;
-			border-color: @form-control-focus-border-color;
-			background-color: @form-control-focus-background-color;
+			box-shadow: 0px 0px 0px @form-control-focus-outline-width @form-control-danger-focus-outline-color;
+			border-color: @form-control-danger-focus-border-color;
+			background-color: @form-control-danger-focus-background-color;
 
 			.no-focus & {
 				box-shadow: none;
 			}
 		}
 
-		&:not([readonly]):hover,
-		&:not([readonly]):focus,
 		&:not([disabled]):hover,
 		&:not([disabled]):focus {
-			border-color: @form-control-hover-border-color;
-			background-color: @form-control-hover-background-color;
-		}
-
-		&[readonly],
-		&[disabled] {
-			cursor: not-allowed;
-			border-color: @form-control-disabled-border-color !important;
-			background-color: @form-control-disabled-background-color !important;
-		}
-	}
-
-	textarea {
-		display: block;
-		border-width: @form-control-border-width;
-		border-style: solid;
-		border-color: @form-control-border-color;
-		padding-top: (@form-control-padding-top - @form-control-border-width);
-		padding-right: (@form-control-padding-right - @form-control-border-width);
-		padding-bottom: (@form-control-padding-bottom - @form-control-border-width);
-		padding-left: (@form-control-padding-left - @form-control-border-width);
-		border-radius: @form-control-border-radius;
-		width: 100%;
-		transition-property: box-shadow, border-color, background-color;
-		transition: @duration @timing-function;
-		appearance: none;
-		background-color: @form-control-background-color;
-		background-image: @form-control-background-image;
-		background-repeat: @form-control-background-repeat;
-		background-position: @form-control-background-position;
-		background-size: @form-control-background-size;
-		min-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
-
-		&::placeholder {
-			color: @form-hint-color;
-		}
-
-		&:focus {
-			outline: none;
-			box-shadow: 0px 0px 0px @form-control-focus-outline-width @form-control-focus-outline-color;
-			border-color: @form-control-focus-border-color;
-			background-color: @form-control-focus-background-color;
-
-			.no-focus & {
-				box-shadow: none;
-			}
-		}
-
-		&:not([readonly]):hover,
-		&:not([readonly]):focus,
-		&:not([disabled]):hover,
-		&:not([disabled]):focus {
-			border-color: @form-control-hover-border-color;
-			background-color: @form-control-hover-background-color;
-		}
-
-		&[readonly],
-		&[disabled] {
-			cursor: not-allowed;
-			border-color: @form-control-disabled-border-color !important;
-			background-color: @form-control-disabled-background-color !important;
+			border-color: @form-control-danger-hover-border-color;
+			background-color: @form-control-danger-hover-background-color;
 		}
 	}
 }
 
-/*.form__invalid {
-	border-color: darken(@alert-danger, 10%) !important;
+.form__hint {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	font-size: @form-hint-font-size;
+	line-height: @form-hint-line-height;
+	color: @form-hint-color;
+
+	&--danger {
+		color: @form-hint-danger-color;
+	}
 }
 
-.form__alert {
+/*.form__alert {
 	border: 1px solid darken(@alert-danger, 10%);
 	background-color: @alert-danger;
 	padding: (6px - 1) (@indent - 1);

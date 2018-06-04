@@ -7,7 +7,7 @@
 		<div class="form__fields">
 			<div class="form__line">
 				<div class="form__control" style="width: 100%;">
-					<input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+					<input type="text" id="name" name="name" placeholder="Иван Иванов" required autofocus>
 				</div>
 			</div>
 		</div>
@@ -22,6 +22,10 @@
 			<div class="form__line">
 				<div class="form__control" style="width: 100%;">
 					<input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+				</div>
+
+				<div class="form__hint" style="width: 100%;">
+					Адрес не будет опубликован
 				</div>
 			</div>
 		</div>
@@ -48,8 +52,26 @@
 
 		<div class="form__fields">
 			<div class="form__line">
+				<div class="form__control  form__control--danger" style="width: 100%;">
+					<input type="password" id="password" name="password" value="1234">
+				</div>
+
+				<div class="form__hint  form__hint--danger" style="width: 100%;">
+					Пароль должен быть не меньше 6 символов
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form__group">
+		<div class="form__label" style="width: 30%;">
+			<label for="system">Система</label>
+		</div>
+
+		<div class="form__fields">
+			<div class="form__line">
 				<div class="form__control" style="width: 100%;">
-					<input type="password" id="password" name="password">
+					<input type="text" id="system" name="system" value="Солнечная" disabled>
 				</div>
 			</div>
 		</div>
@@ -63,7 +85,7 @@
 		<div class="form__fields">
 			<div class="form__line">
 				<div class="form__control" style="width: 100%;">
-					<input type="text" id="planet" name="planet" value="Земля" disabled>
+					<input type="text" id="planet" name="planet" value="Земля" readonly>
 				</div>
 			</div>
 		</div>
