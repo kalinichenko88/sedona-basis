@@ -14,4 +14,4 @@
 // Extensions
 //------------------------------------------------------------------------------
 
-@@include('../blocks/range/range.js')
+@@include('../blocks/file/file.js')
